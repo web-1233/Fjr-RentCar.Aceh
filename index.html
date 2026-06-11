@@ -1,0 +1,1219 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FJR Rent Car Aceh - Layanan rental mobil premium dengan sopir profesional di Lhokseumawe dan Aceh. Armada terawat, mewah, dan harga terbaik.">
+    <meta name="keywords" content="Rental Mobil Lhokseumawe, Sewa Mobil Aceh, FJR Rent Car, Rental Mobil Mewah, Antar Jemput Bandara KNO, Antar Jemput Bandara SIM">
+    <meta name="author" content="FJR Rent Car Aceh">
+    <title>FJR Rent Car Aceh | Premium Car Rental Service</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --color-black: #0a0a0a;
+            --color-dark-gray: #1c1c1c;
+            --color-gold: #D4AF37;
+            --color-gold-light: #F4CF57;
+            --color-gold-dark: #aa8c2c;
+            --color-white: #ffffff;
+            --color-gray: #b0b0b0;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --transition: all 0.3s ease;
+            --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-black);
+            color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* --- UTILITIES --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-gold { color: var(--color-gold); }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-gold);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--color-gold);
+            margin: 10px auto 0;
+        }
+
+        .section-subtitle {
+            color: var(--color-gray);
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* --- ANIMATIONS --- */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold));
+            color: var(--color-black);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+        }
+
+        .btn-outline {
+            border: 2px solid var(--color-gold);
+            color: var(--color-gold);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        .logo span { color: var(--color-gold); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--color-white);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--color-gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        #beranda {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('fjr.jpeg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--color-gray);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* --- ABOUT US --- */
+        #tentang {
+            background-color: var(--color-dark-gray);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-gray);
+        }
+
+        .feature-item i { color: var(--color-gold); }
+
+        /* --- FLEET SECTION --- */
+        .fleet-category {
+            margin-bottom: 40px;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category-header h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-gold);
+        }
+
+        .category-header p {
+            color: var(--color-gray);
+            margin-top: 5px;
+        }
+
+        /* --- NEW DIVIDER STYLE --- */
+        .fleet-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 80px 0;
+            padding: 0 20px;
+            opacity: 0.8;
+        }
+
+        .fleet-divider::before, .fleet-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+        }
+
+        .fleet-divider span {
+            padding: 0 20px;
+            color: var(--color-gold);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .car-card {
+            background-color: var(--color-dark-gray);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--color-gold);
+        }
+
+        .car-image {
+            height: 200px;
+            width: 100%;
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .car-card:hover .car-image img {
+            transform: scale(1.1);
+        }
+
+        .car-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--color-gold);
+            color: var(--color-black);
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .car-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .car-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--color-white);
+        }
+
+        .car-year {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            margin-bottom: 15px;
+        }
+
+        .car-price {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-tag {
+            color: var(--color-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .car-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .car-actions .btn {
+            padding: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* --- TESTIMONIALS --- */
+        #testimoni {
+            background-color: var(--color-dark-gray);
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testi-card {
+            background-color: var(--color-black);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+        }
+
+        .testi-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: rgba(212, 175, 55, 0.1);
+        }
+
+        .stars { color: var(--color-gold); margin-bottom: 15px; }
+        
+        .testi-text {
+            font-style: italic;
+            color: var(--color-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .testi-user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testi-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--color-gold);
+        }
+
+        .testi-name h4 { font-size: 1rem; color: var(--color-white); }
+        .testi-name span { font-size: 0.85rem; color: var(--color-gold); }
+
+        /* --- FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--color-dark-gray);
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover { color: var(--color-gold); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #151515;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            color: var(--color-gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-item.active .faq-answer { max-height: 200px; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #050505;
+            padding: 50px 0 20px;
+            border-top: 1px solid var(--color-gold-dark);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-gold);
+        }
+
+        .footer-info p { color: var(--color-gray); margin-bottom: 5px; }
+        .footer-info i { color: var(--color-gold); margin-right: 10px; }
+
+        .copyright {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            width: 100%;
+            text-align: center;
+            padding-top: 20px;
+            color: var(--color-gray);
+            font-size: 0.8rem;
+        }
+
+        /* --- FLOATING WA --- */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1001;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* --- MODAL --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--color-dark-gray);
+            margin: auto;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 15px;
+            border: 1px solid var(--color-gold);
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-img-container {
+            background-color: #000;
+        }
+        
+        .modal-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-details {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: var(--color-gray);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover { color: var(--color-gold); }
+
+        .modal-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-gold);
+            margin-bottom: 5px;
+        }
+
+        .modal-year { color: var(--color-gray); font-size: 0.9rem; margin-bottom: 20px; }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--color-white);
+        }
+
+        .spec-item i { color: var(--color-gold); width: 20px; }
+
+        .price-section {
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 3px solid var(--color-gold);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .price-val { font-weight: bold; color: var(--color-gold); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .modal-content { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
+            .modal-img-container { height: 250px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                background-color: var(--color-dark-gray);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+            }
+            .nav-links.active { transform: translateY(0); }
+            .mobile-toggle { display: block; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">FJR <span>Rent Car</span></div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#beranda" class="active">Beranda</a>
+                    <a href="#tentang">Tentang Kami</a>
+                    <a href="#armada">Armada</a>
+                    <a href="#testimoni">Testimoni</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="mobile-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda">
+        <div class="container hero-content fade-in-up">
+            <h1>FJR Rent Car Aceh</h1>
+            <p>Rental Mobil Dengan Sopir Profesional di Lhokseumawe</p>
+            <div class="hero-buttons">
+                <a href="#armada" class="btn btn-gold">Lihat Armada</a>
+                <a href="https://wa.me/6281265518409?text=Halo%20FJR%20Rent%20Car%2C%20saya%20ingin%20memesan%20mobil." class="btn btn-outline">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img fade-in-up">
+                    <img src="fjr.jpeg" alt="Sopir Profesional" style="border-radius: 10px; border: 1px solid var(--color-gold);">
+                </div>
+                <div class="about-text fade-in-up">
+                    <h3>Tentang FJR Rent Car Aceh</h3>
+                    <p>FJR Rent Car Aceh menyediakan layanan rental mobil dengan sopir profesional untuk kebutuhan perjalanan dalam kota, luar kota, wisata, bisnis, keluarga, hingga antar jemput bandara dengan armada yang bersih, nyaman, dan terawat.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Sopir Berpengalaman</div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Armada Terawat</div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Harga Transparan</div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Layanan 24 Jam</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Armada Section -->
+    <section id="armada" class="section-padding">
+        <div class="container">
+            <div class="text-center fade-in-up">
+                <h2 class="section-title">Pilihan Armada</h2>
+                <p class="section-subtitle">Pilih kendaraan premium yang sesuai dengan kebutuhan perjalanan Anda.</p>
+            </div>
+
+            <!-- Kategori 1 -->
+            <div class="fleet-category fade-in-up">
+                <div class="category-header">
+                    <h3>Kategori 1: Dalam Kota</h3>
+                    <p>Layanan khusus dalam Kota Lhokseumawe dan sekitarnya (Wajib Sopir)</p>
+                </div>
+                <div class="fleet-grid" id="fleet-city">
+                    <!-- Cards inserted via JS -->
+                </div>
+            </div>
+
+            <!-- VISUAL SEPARATOR -->
+            <div class="fleet-divider">
+                <span>Layanan Drop Off Bandara</span>
+            </div>
+
+            <!-- Kategori 2 -->
+            <div class="fleet-category fade-in-up">
+                <div class="category-header">
+                    <h3>Kategori 2: Airport Transfer & Drop Off</h3>
+                    <p>Layanan Antar Jemput Bandara KNO (Medan) & Sultan Iskandar Muda (Banda Aceh)</p>
+                </div>
+                <div class="fleet-grid" id="fleet-airport">
+                    <!-- Cards inserted via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni" class="section-padding">
+        <div class="container">
+            <div class="text-center fade-in-up">
+                <h2 class="section-title">Kata Pelanggan</h2>
+                <p class="section-subtitle">Pengalaman pelanggan yang puas menggunakan layanan kami.</p>
+            </div>
+
+            <div class="testi-grid" id="testimoni-container">
+                <!-- Testimoni inserted via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-padding">
+        <div class="container">
+            <div class="text-center fade-in-up">
+                <h2 class="section-title">Pertanyaan Umum</h2>
+            </div>
+            <div class="faq-container fade-in-up">
+                <div class="faq-item">
+                    <div class="faq-question">Apakah bisa lepas kunci? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Tidak, seluruh armada FJR Rent Car Aceh hanya tersedia dengan sopir demi keamanan dan kenyamanan perjalanan Anda.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah tersedia antar jemput bandara? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Ya, kami menyediakan layanan airport transfer khusus ke Bandara KNO (Medan) dan Bandara Sultan Iskandar Muda (Banda Aceh).</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah bisa perjalanan luar kota? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Tentu saja. Kami melayani perjalanan luar kota di seluruh wilayah Aceh dan Sumatera sesuai kebutuhan pelanggan.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">FJR Rent Car Aceh</div>
+            <div class="footer-info">
+                <p><i class="fab fa-whatsapp"></i> 081265518409</p>
+                <i class="fab fa-instagram"></i>fjr_rentcar_aceh</p>
+                <p><i class="fas fa-map-marker-alt"></i> Lhokseumawe, Aceh</p>
+            </div>
+            <div class="copyright">
+                &copy;  FJR Rent Car Aceh. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6281265518409?text=Halo%20FJR%20Rent%20Car%2C%20saya%20ingin%20bertanya%20tentang%20rental%20mobil." class="float-wa" target="_blank" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal Detail Unit -->
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-img-container">
+                <img id="m-img" src="" alt="Mobil">
+            </div>
+            <div class="modal-details">
+                <h2 id="m-title" class="modal-title">Nama Mobil</h2>
+                <p id="m-year" class="modal-year"></p>
+                
+                <div class="spec-grid">
+                    <div class="spec-item"><i class="fas fa-cog"></i> <span id="m-trans">Otomatis</span></div>
+                    <div class="spec-item"><i class="fas fa-user"></i> <span id="m-seat">7 Kursi</span></div>
+                    <div class="spec-item"><i class="fas fa-suitcase"></i> <span id="m-bag">2 Tas</span></div>
+                    <div class="spec-item"><i class="fas fa-snowflake"></i> <span>AC Dingin</span></div>
+                    <div class="spec-item"><i class="fas fa-music"></i> <span>Audio Bluetooth</span></div>
+                    <div class="spec-item"><i class="fas fa-mobile-alt"></i> <span>Charger HP</span></div>
+                </div>
+                
+                <div class="price-section" id="m-price-container">
+                    <!-- Harga injected via JS -->
+                </div>
+
+                <p style="font-size:0.85rem; color:var(--color-gray); margin-bottom: 20px;">
+                    * Unit bersih, terawat, dan sopir profesional.
+                </p>
+
+                <a id="m-wa-link" href="#" class="btn btn-gold" target="_blank" style="text-align: center;">
+                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA MOBIL ---
+        const cars = [
+            // Kategori 1: Dalam Kota
+            {
+                id: 1,
+                category: 'city',
+                name: "Toyota Avanza",
+                year: "",
+                img: "avanza.jpg",
+                trans: "Manual",
+                seat: "7 Penumpang",
+                luggage: "2 Tas Besar",
+                prices: [
+                    { label: "12 Jam", val: "Rp700.000" },
+                    { label: "24 Jam", val: "Rp-" }
+                ]
+            },
+            {
+                id: 2,
+                category: 'city',
+                name: "Innova",
+                year: "",
+                img: "innova.jpg",
+                trans: "Manual",
+                seat: "7 Penumpang",
+                luggage: "2 Tas Besar",
+                prices: [
+                    { label: "12 Jam", val: "Rp900.000" },
+                    { label: "24 Jam", val: "Rp-" }
+                ]
+            },
+            {
+                id: 3,
+                category: 'city',
+                name: "Pajero",
+                year: "",
+                img: "pajero.jpg",
+                trans: "Manual",
+                seat: "7 Penumpang",
+                luggage: "2 Tas Sedang",
+                prices: [
+                    { label: "12 Jam", val: "Rp1.800.000" },
+                    { label: "24 Jam", val: "Rp-" }
+                ]
+            },
+            {
+                id: 4,
+                category: 'city',
+                name: "Double Cabin",
+                year: "",
+                img: "hilux.jpg",
+                trans: "Otomatis",
+                seat: "5 Penumpang",
+                luggage: "2 Tas Sedang",
+                prices: [
+                    { label: "12 Jam", val: "Rp1.800.000" },
+                    { label: "24 Jam", val: "Rp-" }
+                ]
+            },
+            {
+                id: 5,
+                category: 'city',
+                name: "Toyota Hiace",
+                year: "",
+                img: "hiace.jpg",
+                trans: "Otomatis",
+                seat: "7 Penumpang",
+                luggage: "3 Tas Besar",
+                prices: [
+                    { label: "12 Jam", val: "Rp1.800.000" },
+                    { label: "24 Jam", val: "Rp-" }
+                ]
+            },
+            {
+                id: 6,
+                category: 'city',
+                name: "Fortuner",
+                year: "",
+                img: "fortuner.jpg",
+                trans: "Otomatis",
+                seat: "7 Penumpang",
+                luggage: "3 Tas Besar",
+                prices: [
+                    { label: "12 Jam", val: "Rp1.800.000" },
+                    { label: "24 Jam", val: "Rp-" }
+                ]
+            },
+            // Kategori 2: Airport Transfer (Updated Prices & Destinations)
+            {
+                id: 8,
+                category: 'airport',
+                name: "Toyota Innova",
+                year: "",
+                img: "innova.jpg",
+                trans: "Otomatis",
+                seat: "7 Penumpang",
+                luggage: "4 Tas Besar",
+                prices: [
+                    { label: "→ Bandara KNO", val: "Rp1.900.000" },
+                    { label: "→ Bandara SIM", val: "Rp1.900.000" }
+                ]
+            },
+            {
+                id: 9,
+                category: 'airport',
+                name: "Avanza",
+                year: "",
+                img: "avanza.jpg",
+                trans: "Otomatis",
+                seat: "7 Penumpang",
+                luggage: "4 Tas Besar",
+                prices: [
+                    { label: "→ Bandara KNO", val: "Rp1.800.000" },
+                    { label: "→ Bandara SIM", val: "Rp1.600.000" }
+                ]
+            },
+            {
+                id: 10,
+                category: 'airport',
+                name: "Toyota Hiace",
+                year: "",
+                img: "hiace.jpg",
+                trans: "Otomatis",
+                seat: "7 Penumpang",
+                luggage: "4 Tas Besar",
+                prices: [
+                    { label: "→ Bandara KNO", val: "Rp2.800.000" },
+                    { label: "→ Bandara SIM", val: "Rp2.500.000" }
+                ]
+            },
+            {
+                id: 11,
+                category: 'airport',
+                name: "Toyota Hiace Premio",
+                year: "",
+                img: "premio.jpg",
+                trans: "Otomatis",
+                seat: "14 Penumpang",
+                luggage: "6 Tas Besar",
+                prices: [
+                    { label: "→ Bandara KNO", val: "Rp2.500.000" },
+                    { label: "→ Bandara SIM", val: "Rp2.500.000" }
+                ]
+            },
+        ];
+
+        // --- RENDER FLEET ---
+        function renderFleet() {
+            const cityContainer = document.getElementById('fleet-city');
+            const airportContainer = document.getElementById('fleet-airport');
+
+            cars.forEach(car => {
+                const priceDisplay = car.prices[0].val; // Show first price on card
+                const card = `
+                    <div class="car-card">
+                        <div class="car-image">
+                            <span class="car-badge">${car.year}</span>
+                            <img src="${car.img}" alt="${car.name}">
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">${car.name}</h3>
+                            <p class="car-year">${car.trans} - ${car.seat}</p>
+                            <div class="car-price">
+                                <span class="price-tag">${priceDisplay}</span>
+                                <small style="color:#666">Mulai dari</small>
+                            </div>
+                            <div class="car-actions">
+                                <button onclick="openModal(${car.id})" class="btn btn-outline">Detail Unit</button>
+                                <a onclick="orderDirect(${car.id})" class="btn btn-gold" style="cursor:pointer; text-align:center; display:flex; align-items:center; justify-content:center;">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                if (car.category === 'city') {
+                    cityContainer.innerHTML += card;
+                } else {
+                    airportContainer.innerHTML += card;
+                }
+            });
+        }
+
+        // --- RENDER TESTIMONI ---
+        function renderTestimonials() {
+            const container = document.getElementById('testimoni-container');
+            const testimonials = [
+                { name: "Budi Santoso", role: "Pengusaha", text: "Pelayanan sangat memuaskan, mobil bersih dan wangi, sopir sangat ramah dan hafal jalan." },
+                { name: "Siti Aminah", role: "Wisatawan", text: "Sewa Hiace untuk keluarga besar, perjalanan sangat nyaman. Recommended banget FJR Rent Car!" },
+                { name: "Andi Wijaya", role: "Staff Bank", text: "Selalu menggunakan jasa FJR untuk tamu kantor. Armada Innova Rebornnya terawat sekali." },
+                { name: "Ratna Dewi", role: "Ibu Rumah Tangga", text: "Pesan Fortuner untuk liburan keluarga, suami saya sangat puas dengan performa mobilnya." },
+                { name: "Faisal Akbar", role: "Mahasiswa", text: "Harga terjangkau untuk mobil sekelas Brio. Sopirnya tepat waktu menjemput." },
+                { name: "Cut Nyak Meutia", role: "Dokter", text: "Antar jemput bandara sangat lancar, tidak perlu menunggu lama. Terima kasih." }
+            ];
+
+            testimonials.forEach((t, i) => {
+                // Generate consistent avatar based on index
+                const avatar = `https://picsum.photos/seed/user${i}/100/100`;
+                const card = `
+                    <div class="testi-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testi-text">"${t.text}"</p>
+                        <div class="testi-user">
+                            <img src="${avatar}" alt="${t.name}" class="testi-avatar">
+                            <div class="testi-name">
+                                <h4>${t.name}</h4>
+                                <span>${t.role}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        // --- MODAL LOGIC ---
+        const modal = document.getElementById("carModal");
+        const closeModal = document.querySelector(".close-modal");
+
+        function openModal(id) {
+            const car = cars.find(c => c.id === id);
+            if (!car) return;
+
+            // Populate Modal
+            document.getElementById('m-img').src = car.img;
+            document.getElementById('m-title').textContent = car.name;
+            document.getElementById('m-year').textContent = `Tahun ${car.year}`;
+            document.getElementById('m-trans').textContent = car.trans;
+            document.getElementById('m-seat').textContent = car.seat;
+            document.getElementById('m-bag').textContent = car.luggage;
+
+            // Prices
+            const priceContainer = document.getElementById('m-price-container');
+            priceContainer.innerHTML = '';
+            car.prices.forEach(p => {
+                priceContainer.innerHTML += `
+                    <div class="price-row">
+                        <span>${p.label}</span>
+                        <span class="price-val">${p.val}</span>
+                    </div>
+                `;
+            });
+
+            // WhatsApp Link
+            const message = `Halo FJR Rent Car, saya tertarik memesan ${car.name} tahun ${car.year}. Mohon infonya.`;
+            document.getElementById('m-wa-link').href = `https://wa.me/6281265518409?text=${encodeURIComponent(message)}`;
+
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function orderDirect(id) {
+            const car = cars.find(c => c.id === id);
+            const message = `Halo FJR Rent Car, saya ingin memesan ${car.name} sekarang.`;
+            window.open(`https://wa.me/6281265518409?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        closeModal.onclick = function() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // --- MOBILE MENU ---
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        // Close menu when link clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // --- FAQ INTERACTION ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // --- SCROLL ANIMATION (Intersection Observer) ---
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- INITIALIZE ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFleet();
+            renderTestimonials();
+        });
+
+    </script>
+</body>
+</html>
